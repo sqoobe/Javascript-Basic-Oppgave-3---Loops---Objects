@@ -93,13 +93,14 @@ let combinedAge = 0;
 
 for (let i = 0; i < people.length; i++) {
   if (people[i].name === "Otto") {
+    //Når Otto er true, hopp over i arrayet.
     continue;
   }
-  people[i].city = cities[Math.floor(Math.random() * cities.length)];
-  people[i].title = people[i].male ? "Mr." : "Mrs.";
-  people[i].age = people[i].age + 2;
-  people[i].hobbies.unshift("coding");
-  combinedAge += people[i].age;
+  people[i].city = cities[Math.floor(Math.random() * cities.length)]; //legger til random city til people fra arrayet cities.
+  people[i].title = people[i].male ? "Mr." : "Mrs."; //sjekker om male er true eller false og gir tittel til personen
+  people[i].age = people[i].age + 2; // legger til 2 år på age
+  people[i].hobbies.unshift("coding"); // legger til coding i starten av hobbies
+  combinedAge += people[i].age; //plusser sammen age til alle og lagrer totalen i combinedAge.
 
   console.log(people[i]);
 }
@@ -138,11 +139,12 @@ diceRoller(5, 20) skal returnere et array med 5 tilfeldige tall fra 1-20.
 
 function diceRoller(numDice, sides = 6) {
   if (numDice <= 0 || sides <= 0) {
-    throw new Error("Antall terninger og sider må være større enn 0");
+    console.log("error"); //hvis numDice eller sides er mindre enn 0.
   }
 
-  let results = [];
+  let results = []; //lager en tom array til å putte svaret i.
   for (let i = 0; i < numDice; i++) {
+    //for loop som pusher random rundet av tall til det tomme arrayet(+1 på slutten for å slippe tallet 0.)
     results.push(Math.floor(Math.random() * sides) + 1);
   }
   return results;
@@ -151,7 +153,7 @@ console.log(diceRoller(5));
 console.log(diceRoller(8, 20));
 
 /* let numberArray = [1, 2, 3, 4, 5, 6];
------------normal dice roller------------
+-----------normal dice roller ------------
 function diceRoller() {
   for (let i = 0; i < numberArray.length; i++) {
     randomNumber = numberArray[Math.floor(Math.random() * numberArray.length)];
@@ -188,6 +190,19 @@ skal returnere:
 // Skriv koden for oppgave 3 her
 
 example1 = [" thIS", "teXt  ", " nEeds ", "to", "BE", "cleANED   ", " Up"];
+
+function cleanText(arr) {
+  let cleanedText = []; //tom array til å legge teksten i
+
+  for (let str of arr) {
+    //for hver string i arrayet pusher den en trimmet(fjerne mellomrom) & toLowerCase string til det tomme arrayet.
+    cleanedText.push(str.trim().toLowerCase());
+  }
+
+  return cleanedText.join(" "); //legger til " " som separator i arrayet
+}
+
+console.log(cleanText(example1));
 
 /* function cleanUp(text) {
   let newText = text.toLowerCase();
