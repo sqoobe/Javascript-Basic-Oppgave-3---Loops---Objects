@@ -191,12 +191,12 @@ skal returnere:
 
 example1 = [" thIS", "teXt  ", " nEeds ", "to", "BE", "cleANED   ", " Up"];
 
-function cleanText(arr) {
+function cleanText(eksempelArray) {
   let cleanedText = []; //tom array til å legge teksten i
 
-  for (let str of arr) {
+  for (let eksempelString of eksempelArray) {
     //for hver string i arrayet pusher den en trimmet(fjerne mellomrom) & toLowerCase string til det tomme arrayet.
-    cleanedText.push(str.trim().toLowerCase());
+    cleanedText.push(eksempelString.trim().toLowerCase());
   }
 
   return cleanedText.join(" "); //legger til " " som separator i arrayet
