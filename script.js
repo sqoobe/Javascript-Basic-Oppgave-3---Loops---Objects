@@ -240,8 +240,21 @@ skal returnere "whao is ohe ptino tf ohis?"
 
 function doubleSwap(string, charA, charB) {
   // Skriv koden for oppgave 4 her
+  let swap = "";
+  for (let char of string) {
+    if (char === charA) {
+      swap += charB;
+    } else if (char === charB) {
+      swap += charA;
+    } else {
+      swap += char;
+    }
+  }
+  return swap;
 }
-
+console.log(doubleSwap("this is a string", "i", "s")); // "thsi si a itrsng"
+console.log(doubleSwap("m#ybe #nother #ppro#ch is necess#ry", "#", "a")); // "maybe another approach is necessary"
+console.log(doubleSwap("what is the point of this?", "o", "t")); //"whao is ohe ptino tf ohis?"
 /******************************************************************************
 5.
 
